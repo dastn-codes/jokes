@@ -1,4 +1,4 @@
-import "../assets/css/index.css";
+import "../assets/css/app.css";
 
 import React, { useState } from "react";
 import { Button } from './Button';
@@ -20,7 +20,7 @@ export const App = props => {
     }
 
     return (
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }} >
+        <div id="app">
             <Card p1={part1} p2={part2} />
             <Button onClick = {simulateButtonClick} />
         </div>
