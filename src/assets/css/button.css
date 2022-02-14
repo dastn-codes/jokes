@@ -1,0 +1,15 @@
+button {
+  background-color: green;
+  border: none;
+  font-size: large;
+  border: 1px solid lightcoral;
+  color: white;
+  padding: 10px;
+  border-radius: 3px;
+  width: 500px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman";
+}
+
+button:hover {
+  background: goldenrod;
+}
