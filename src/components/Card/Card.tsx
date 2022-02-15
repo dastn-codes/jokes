@@ -1,8 +1,11 @@
 import "../../assets/css/card.css"
 
 import React from 'react';
-
-export const Card = ({ p1, p2 }) => {
+type cardProps = {
+    p1: string,
+    p2: string
+}
+export const Card = ({ p1, p2 }: cardProps) => {
     return (
         <div id='container'>
             <div>
