@@ -1,4 +1,4 @@
-button {
+#getJokeButton {
   background-color: green;
   border: none;
   font-size: large;
@@ -8,8 +8,9 @@ button {
   border-radius: 3px;
   width: 500px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman";
+  margin-top: 5px;
 }
 
-button:hover {
+#getJokeButton:hover {
   background: goldenrod;
 }
