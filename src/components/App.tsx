@@ -6,11 +6,11 @@ import { Card } from "./Card";
 import { getJoke } from "../assets/js/axios";
 
 
-export const App = props => {
+export const App: React.FC = () => {
     const [part1, setJokePart1] = useState("");
     const [part2, setJokePart2] = useState("");
 
-    const simulateButtonClick = props => {
+    const simulateButtonClick = () => {
         getJoke()
             .then(res => {
                setJokePart1(res.data.setup);

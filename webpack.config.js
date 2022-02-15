@@ -4,7 +4,9 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     mode: 'development',
-
+    resolve: {
+      extensions: ['.ts', '.tsx', '.js', '.jsx']
+    },
     plugins: [
       new MiniCssExtractPlugin({
         filename: '[name].bundle.css',
@@ -12,11 +14,13 @@ module.exports = {
       }),
       new webpack.HotModuleReplacementPlugin()
     ],
-    entry: path.resolve(__dirname, "src", 'index.js'),
+
+    entry: path.resolve(__dirname, "src", 'index.ts'),
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
     },
+
     devServer: {
         static: path.resolve(__dirname, 'dist'),
         open: true,
@@ -46,6 +50,12 @@ module.exports = {
                 }, 
               },
             ]
+          },
+          {
+            test: /\.(tsx|ts)?$/,
+            include: path.resolve(__dirname, 'src'),
+            exclude: /node_modules/,
+            loader: 'ts-loader'
           },
           {
             test: /\.css$/i,
