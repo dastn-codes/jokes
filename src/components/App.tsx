@@ -3,6 +3,7 @@ import "../assets/css/app.css";
 import React, { useState, useEffect } from "react";
 import { Button } from './Button';
 import { Card } from "./Card";
+import { Background } from "./Background";
 import { getJoke } from "../assets/js/axios";
 
 
@@ -24,11 +25,14 @@ export const App: React.FC = () => {
     }, [])
 
     return (
-        <div id="app">
-            <div>
-                <Card p1={part1} p2={part2} />
-                <Button onClick = {simulateButtonClick} />
+        <>
+            <div id="app">
+                <div>
+                    <Card p1={part1} p2={part2} />
+                    <Button onClick = {simulateButtonClick} />
+                </div>
             </div>
-        </div>
+            <Background />
+        </>
     )
 }
