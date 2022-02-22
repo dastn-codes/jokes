@@ -10,7 +10,7 @@ module.exports = {
     },
     plugins: [
       new MiniCssExtractPlugin({
-        filename: '[name].bundle.css',
+        filename: 'main.bundle.css',
         chunkFilename: '[id].css'
       }),
       new webpack.HotModuleReplacementPlugin(),
