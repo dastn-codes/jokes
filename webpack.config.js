@@ -1,6 +1,7 @@
 const path = require("path");
 const webpack = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: 'development',
@@ -12,12 +13,15 @@ module.exports = {
         filename: '[name].bundle.css',
         chunkFilename: '[id].css'
       }),
-      new webpack.HotModuleReplacementPlugin()
+      new webpack.HotModuleReplacementPlugin(),
+      new HtmlWebpackPlugin({
+        template: path.join(__dirname, "dist", 'index.html'),
+      }),
     ],
 
     entry: path.resolve(__dirname, "src", 'index.ts'),
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'build'),
         filename: 'bundle.js'
     },
 
